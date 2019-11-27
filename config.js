@@ -51,7 +51,7 @@ module.exports = {
         'selector-list-comma-newline-before': null,
         'selector-list-comma-space-after': null,
         'selector-list-comma-space-before': null,
-        'no-duplicate-selector': true,
+        'no-duplicate-selectors': true,
         'media-feature-colon-space-after': 'always',
         'media-feature-colon-space-before': 'never',
         'media-feature-parentheses-space-inside': 'never',
