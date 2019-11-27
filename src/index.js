@@ -33,7 +33,7 @@ function resolveConfig({
 }
 
 resolveConfig.resolve = (stylelintConfig, prettierOptions = {}) => {
-    const { rules } = stylelintConfig;
+    const { rules, parser } = stylelintConfig;
 
     if (rules['max-line-length']) {
         const printWidth = rules['max-line-length'][0];
@@ -60,7 +60,13 @@ resolveConfig.resolve = (stylelintConfig, prettierOptions = {}) => {
             prettierOptions.tabWidth = indentation;
         }
     }
-    prettierOptions.parser = 'postcss';
+
+    if (parser === 'scss') {
+        prettierOptions.parser = parser;
+    } else {
+        prettierOptions.parser = 'css';
+    }
+    
     debug('prettier %O', prettierOptions);
     debug('linter %O', stylelintConfig);
 
